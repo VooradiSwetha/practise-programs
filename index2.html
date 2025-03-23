@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Event Delegation Example</title>
+</head>
+<body>
+    <div id="parent" style="padding: 20px; border: 2px solid black;">
+        <button id="btn1">Button 1</button>
+        <button id="btn2">Button 2</button>
+        <button id="btn3">Button 3</button>
+    </div>
+
+    <script>
+        document.getElementById("parent").addEventListener("click", function (event) {
+            if (event.target.tagName === "BUTTON") {
+                console.log("Clicked Button: " + event.target.innerText);
+            }
+        });
+
+        document.getElementById('button-container').addEventListener('click', function(event) {
+  if (event.target.classList.contains('btn')) {
+    console.log('You clicked:', event.target.textContent);
+  }
+});
+
+    </script>
+</body>
+</html>

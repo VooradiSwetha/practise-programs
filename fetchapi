@@ -1,0 +1,49 @@
+//https://catfact.ninja/fact
+
+//fetching data using .then
+
+function fetchThenData(data) {
+  fetch(data)
+  .then(response => response.json())
+  .then(data => console.log(data))
+  .catch(error => console.log(error))
+}
+
+fetchThenData('https://catfact.ninja/fact')
+
+//fetchng data using asyn/await
+
+async function fetchDataAsync(url) {
+ try {
+  const data = await fetch(url);
+  if(!data.ok) {
+    console.log(`error in response: ${data.status}`)
+  }
+  const response = await data.json();
+  console.log(response);
+ }catch (error) {
+  console.log(error)
+ }
+}
+
+fetchDataAsync('https://catfact.ninja/fact')
+
+//calling apli with method, request header and body
+
+async function getFetch(url) {
+  try {
+    const resp = fetch(url, {
+      method: 'GET',
+      headers: {
+      'Content-type': 'applications/json',
+      },
+      body: JSON.stringify(bodydetails)
+    });
+    const data = await resp.json();
+    console.log(data)
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+// getFetch('https://catfact.ninja/fact')

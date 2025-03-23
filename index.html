@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>Event Bubbling</title>
+</head>
+<body>
+ <div id="div1" style="padding: 50px;
+ border: 1px solid black;">
+ Div 1
+ <div id="div2" style="padding: 50px;
+ border: 1px solid red;">
+ Div 2
+ <button id="button1">Click Me</button>
+ </div>
+ </div>
+ <script>
+ document.getElementById('div1').addEventListener(
+ 'click', function() {
+    console.log('Div 1 clicked');
+ }, true);
+ document.getElementById('div2').addEventListener(
+ 'click', function() {
+ console.log('Div 2 clicked');
+ }, true);
+ document.getElementById('button1').addEventListener(
+ 'click', function(event) {
+ console.log('Button clicked');
+ // To stop the event from bubbling up
+  event.stopPropagation();
+ }, true);
+ </script>
+</body>
+</html>
+
+
+
