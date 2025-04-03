@@ -11,7 +11,6 @@ function findOne(a) {
             maxCount = Math.max(maxCount, count);
         } else {
             count = 0;
-            console.log(maxCount);
         }
     }
     return maxCount;
