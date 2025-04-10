@@ -13,3 +13,37 @@ function checkVowles(str1) {
 }
 
 console.log(checkVowles(str1));
+
+let obj= {
+  name: 'swetha',
+  age:24,
+  city:'hyd',
+  }
+//filter only values with strings
+
+function filterObj(obj) {
+  let filterobj1 = {}
+  for(let key in obj) {
+    if(typeof obj[key] === 'string') {
+      filterobj1[key] = obj[key].toUpperCase();
+    } else {
+      filterobj1[key] = obj[key];
+    }
+  }
+  return filterobj1
+}
+
+console.log(filterObj(obj))
+
+
+function filterObj2(obj) {
+  let filterobj1 = {}
+  for(let key in obj) {
+    if(typeof obj[key] === 'string') {
+      filterobj1[key] = obj[key]
+    }
+  }
+  return filterobj1
+}
+
+console.log(filterObj2(obj))
